@@ -5,7 +5,8 @@ const {httpServer, httpsServer} = require('./lib/servers');
 
 // Define a request router
 const router = {
-    "sample": handlers.sample
+    "sample": handlers.sample,
+    "users": handlers.users
 }
 
 // Start the https server

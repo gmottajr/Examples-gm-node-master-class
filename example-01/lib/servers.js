@@ -4,6 +4,7 @@ const https = require('https');
 const url = require('url');
 const fs = require('fs');
 const stringDecoder = require('string_decoder').StringDecoder;
+const helpers = require('./lib/helpers');
 
 // Instantiate the HTTP server
 const httpServer = http.createServer(function (req, res) {
@@ -79,7 +80,7 @@ function buildData(trimedPath, queryStringObject, method, headers, buffer) {
         'queryStringObject': queryStringObject,
         'method': method,
         'headers': headers,
-        'payload': buffer
+        'payload': helpers.parseJsonToObject(buffer)
     };
 }
 

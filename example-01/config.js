@@ -2,6 +2,11 @@
 * create and export configuration variables
 */
 
+// Containers for configuration
+
+const configurations = {};
+
+configurations.hashingSecret = 'thisIrMySuper#TerribleSecret!@3333';
 
 // containers for all the environments
 const environments = {};
@@ -41,4 +46,4 @@ const currentEnvironment = typeof(process.env.NODE_ENV) == 'string' ? process.en
 const environmentToExport = typeof(environments[currentEnvironment]) == 'object' ? environments[currentEnvironment] : environments.development;
 
 // Export the module
-module.exports = environmentToExport;
+module.exports = {configurations, environmentToExport};
