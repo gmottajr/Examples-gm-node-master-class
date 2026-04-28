@@ -6,6 +6,10 @@ const StringDecoder = require('string_decoder').StringDecoder;
 const config = require('./config');
 const fs = require('fs');
 
+_data.read('test', 'newFile', function(err, data) {
+    console.log('Reading file.  This was the error: ', err, 'And this was the data: ', data);
+});
+
 // Instantiate the HTTP server
 const httpServer = http.createServer(function (req, res) {
     unifiedServer(req, res);
