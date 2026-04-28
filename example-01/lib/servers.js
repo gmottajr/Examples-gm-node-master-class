@@ -3,6 +3,7 @@ const http = require('http');
 const https = require('https');
 const url = require('url');
 const fs = require('fs');
+const stringDecoder = require('string_decoder').StringDecoder;
 
 // Instantiate the HTTP server
 const httpServer = http.createServer(function (req, res) {
@@ -38,7 +39,7 @@ const unifiedServer = function(req, res) {
     const headers = req.headers;
 
     // Get the Payload, if any
-    const decoder = new StringDecoder('utf-8');
+    const decoder = new stringDecoder('utf-8');
     let buffer = '';
     req.on('data', function (data) {
         buffer += decoder.write(data);

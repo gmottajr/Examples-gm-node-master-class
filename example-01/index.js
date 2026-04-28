@@ -1,8 +1,5 @@
 // Dependencies
-
-const StringDecoder = require('string_decoder').StringDecoder;
 const config = require('./config');
-
 const handlers = require('./lib/handlers');
 const {httpServer, httpsServer} = require('./lib/servers');
 
